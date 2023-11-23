@@ -138,3 +138,5 @@ GitHub.sublime-settings
 
 # Docker Postgres Data Folder
 data/
+data/db
+data/db/**
