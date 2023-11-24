@@ -8,7 +8,7 @@ class Customer(BaseModel):
     last_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=20)
     email = models.EmailField()
-    password = models.TextField()
+    password = models.CharField(max_length=254)
     active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -16,7 +16,8 @@ class Customer(BaseModel):
 
 
 class CustomerAddress(BaseModel):
-    customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    customer_id = models.ForeignKey(
+        Customer, related_name='customer_address', on_delete=models.CASCADE)
     address_line1 = models.TextField()
     address_line2 = models.TextField()
     postal_code = models.CharField(max_length=254)
