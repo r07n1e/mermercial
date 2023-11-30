@@ -14,6 +14,11 @@ docker-compose up -d
 docker-compose exec web python manage.py migrate
 ```
 
+### Craete Superuser
+```bash
+docker-compose exec web python manage.py createsuperuser
+```
+
 ### If need to make migration, execute before migrate
 ``` bash
 docker-compose exec web python manage.py makemigrations
