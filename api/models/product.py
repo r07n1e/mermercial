@@ -1,8 +1,8 @@
 from django.db import models
-from .basemodel import BaseModel
+from .basemodel import Timestamp
 
 
-class Product(BaseModel):
+class Product(Timestamp):
     name = models.CharField(max_length=100)
     image = models.ImageField(
         upload_to='images/product/', default=None, blank=True)
