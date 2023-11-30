@@ -1,9 +1,10 @@
 from django.db import models
-from .basemodel import BaseModel
+from .basemodel import Timestamp
 from django.contrib.auth.models import User
+import uuid
 
 
-class Coupon(BaseModel):
+class Coupon(Timestamp):
     code = models.CharField(max_length=254)
     description = models.TextField()
     discount_value = models.DecimalField(max_digits=100, decimal_places=2)

@@ -1,9 +1,9 @@
 from django.db import models
-from .basemodel import BaseModel
+from .basemodel import Timestamp
 import uuid
 
 
-class Category(BaseModel):
+class Category(Timestamp):
     name = models.CharField(max_length=100)
     image = models.ImageField(
         upload_to='images/category', default=None, blank=True)

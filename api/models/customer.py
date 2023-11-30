@@ -1,9 +1,11 @@
 from django.db import models
-from .basemodel import BaseModel
+from .basemodel import Timestamp
+import uuid
 
 
-class Customer(BaseModel):
-    id = models.UUIDField(primary_key=True)
+class Customer(Timestamp):
+    id = models.UUIDField(default=uuid.uuid4,
+                          auto_created=True, serialize=False, verbose_name='ID', primary_key=True, editable=False)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=20)
@@ -15,7 +17,7 @@ class Customer(BaseModel):
         return self.name
 
 
-class CustomerAddress(BaseModel):
+class CustomerAddress(Timestamp):
     customer_id = models.ForeignKey(
         Customer, related_name='customer_address', on_delete=models.CASCADE)
     address_line1 = models.TextField()
