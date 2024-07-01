@@ -1,5 +1,5 @@
 # mermercial
-A ready to use APIs for e-commerce website.
+backend for e-commerce website.
 
 ``` bash
 git clone https://github.com/r07n1e/mermercial.git
@@ -15,7 +15,7 @@ docker-compose up -d
 docker-compose exec web python manage.py migrate
 ```
 
-### Craete Superuser
+### Create Superuser
 ```bash
 docker-compose exec web python manage.py createsuperuser
 ```
